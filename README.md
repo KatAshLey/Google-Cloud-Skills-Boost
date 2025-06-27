@@ -1,2 +1,2 @@
-# Google-Cloud-Engineering
-Learning Google Cloud Engineering pathway on Google Skill Boost
+# Google Cloud Skills Boost
+Learning pathways on Google Skills Boost

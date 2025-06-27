@@ -1,0 +1,2 @@
+Following the learning path of Google Cloud Engineering Certificate on Google Cloud Skills Boost.
+"This certificate program helps learners build expertise in cloud infrastructure and prepare for roles such as cloud engineer, solution architect and DevOps engineer"

@@ -1,0 +1,2 @@
+Following the leaning path of Google Cloud Computing Foundations Certificate on Google Cloud Skills Boost.
+"This learning path contains on-demand courses that introduces you to the fundamentals of Google Cloud. This learning pathway guides you though a curated collection of on-demand courses, labs and skill badges that provide you with real-world, hands-on experience in Google Cloud."
