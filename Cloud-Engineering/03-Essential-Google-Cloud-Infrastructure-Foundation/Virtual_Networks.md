@@ -1,7 +1,7 @@
 <h1>Virtual Networks</h1>
 <h2>Module Overview</h2>
 
-* USes a software defined network built on global fiber infrastructure
+* Uses a software defined network built on global fiber infrastructure
 * Google Cloud consists of Regions around the world along with Points of Presence(POP)
 * **Regions** a specific geographical location you can run your resources. Consists of 3 zones (apart from Iowa with 4)
 

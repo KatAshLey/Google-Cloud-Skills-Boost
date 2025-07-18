@@ -21,3 +21,10 @@ Courses included in this path
 * Interacting with Google Cloud
 * Virtual Networks
 * Virtual Machines
+
+**Essential Google Cloud Infrastructure: Core Services**
+
+* Identity and Access Management (IAM)
+* Storage and Database Services
+* Resource Management
+* Resource Monitoring
