@@ -28,3 +28,5 @@ Courses included in this path
 * Storage and Database Services
 * Resource Management
 * Resource Monitoring
+
+**Elastic Google Cloud Infrastructure: Scaling and Automation**
