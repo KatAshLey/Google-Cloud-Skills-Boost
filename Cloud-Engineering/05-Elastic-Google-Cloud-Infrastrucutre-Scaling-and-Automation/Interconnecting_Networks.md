@@ -141,18 +141,89 @@ All accessed via internal IP addresses
 * Primary and redundant ports (Google Cloud and remote cloud service provider)
 
 <h2>Peering</h2>
+<h3>Direct Peering</h3>
 
+Direct Peering provides a direct connection between your business network and Google's.
+* Broad reaching edge network locations
+* Exchange BGP routes
+* Reach all of google's services
+* No SLA
+* Peering requirements involving GCP global Edge points (if you are not close to an Edge point then use Carrier Peering)
 
+<h3>Carrier Peering</h3>
+
+Carrier Peering provides connectivity through a supported partner.To be used if you require access to Google's peering infrastructure and cannot satisfy the direct peering requirements.
+* Carrier Peering partner
+* Reach all of Google's services
+* Partner requirements
+* No SLA
+
+<h3>Comparison of Peering Options</h3>
+
+Both have public IP addresses
+**Direct Peering**
+* Dedicated, direct connection to Google's network
+* 10 Gbps per link
+* Connection in Google Cloud PoPs
+
+**Carrier Peering**
+* Peering through service provider to Google's public network
+* Varies based on partner offering
+* Service provider
 
 <h2>Choosing a Connection</h2>
 
+<h3>Interconnect or Peering</h3>
+
+**Interconnect**
+* Direct access to RFC1918 IPs in your VPC with SLA
+* Dedicated Interconnect
+* Partner Interconnect
+* Cloud VPN
+
+**Peering**
+* Access to Google public IPs only without SLA
+* Direct Peering
+* Carrier Peering
+
+<h3>Connect On-premises to Google Workspace</h3>
+
+![Connect On-premises to Google Workspace](image-7.png)
 
 
-<h2>Shared VPN and VPC Peering</h2>
+<h3>Connect Google Cloud with Another Cloud Service</h3>
 
+![Connect Google Cloud to Another Service](image-8.png)
 
+<h3>Connect On-premises with Google Cloud</h3>
+
+![Connect On-premises with Google Cloud](image-9.png)
+
+<h2>Shared VPC and VPC Peering</h2>
+
+<h3>Shared VPC</h3>
+
+Shared VPC allows an organization to connect resources from multiple projects to a common VPC network so they can communicate with each other securely and efficiently by using internal IP addresses from that network. 
+
+Designate a project as the **Host Project** and attach other **Service Projects** to it. VPC networks in the host project are called **Shared VPC Networks**. Eligible resources from service projects can use subnets in the shared VPC network.
+
+A shared VPC lets organizations administrators delegate administrative responsibilities, such as creating and managing instances, to **Service Project Admins** while maintaining centralized control over network resources like subnets, routes and firewalls.
+
+**Standalone Projects** are projects that do not participate in a shared VPC. **Standalone VPC Network** is an unshared VPC network that exists in either a standalone project or a service project.
+
+<h3>VPC Network Peering</h3>
+
+VPC Network Peering allows private RFC1918 connectivity across 2 VPC networks, regardless of if they belong to the same project or organization. remember firewall rules define what traffic is allowed or denied between networks. 
+
+Admins of each network need to peer with the other network. When both peering connections are created, the VPC Network Peering session becomes active and routes are exchanged.
+
+VPC Network Peering is a decentralized or distributed approach to multi project networking, as each VPC network may remain under the control of separate administrator groups and maintain its own global firewall and routing tables.
 
 <h2>Module Review</h2>
 
-
+* Dedicated Interconnect
+* Partner Interconnect
+* Cloud VPN
+* Direct Peering
+* Carrier Peering
 
