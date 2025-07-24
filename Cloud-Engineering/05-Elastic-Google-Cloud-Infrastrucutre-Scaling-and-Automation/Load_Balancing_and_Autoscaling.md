@@ -178,11 +178,9 @@ A network endpoint group (NEG) is a configuration object that specifies a group 
 * Configure an HTTP load balancer with IPv4 and IPv6
 * Stress test an HTTP load balancer
 
-<h1>Review
+<h3>Review</h3>
 
-DO THIS LAB AND REVIEW</h1>
-
-
+Configured an Application Load Balancer with backends in 2 regions. Then stress tested the Application Load Balancer with a VM to demonstrate global load balancing and autoscaling.
 
 <h2>Cloud CDN</h2>
 
@@ -218,30 +216,93 @@ Cache modes control the factors that determine whether or not Cloud CDN caches y
 
 <h2>TCP Proxy Load Balancing</h2>
 
-<h1>Go back do lab and review</h1>
+* A global load balancing service for unencrypted, non HTTP traffic
+* Terminates TCP sessions at load balancing layer, then forwards the traffic to your VM instances using TCP or SSL
+* IPv4 or IPv6 clients
+* Intelligent routing
+* Security patching
 
+![TCP Proxy Load Balancing](image-14.png)
 
 <h2>Network Load Balancing</h2>
 
+* Regional, non-proxied load balancer. all traffic is passed through the load balancer instead of being proxies and the traffic can only be balanced between VM instances that are in the same region
+* Forwarding rules based on the incoming IP protocol data eg address, port or protocol type
+* Traffic: UDP, TCP/SSL ports that are not supported with the TCP proxy and SSL proxy load balancers
+* Architecture: Backend service based, target pool based
 
+<h3>Backend Service Based Architecture</h3>
+
+* Regional backend service
+* Defines the behavior of the load balancer and how it distributes traffic to its backend instance groups
+* Enables new features not supported with legacy target pools
+  * Non-legacy health checks
+  * Auto-scaling with managed instance groups (TCP, SSL, HTTP, HTTPS, HTTP/2)
+  * Connection draining
+  * Configurable failover policy
+
+<h3>Target Pool Based Architecture</h3>
+
+Defines a group of instances that receive incoming traffic from forwarding rules. The forwarding rule directs traffic to a target pool, the load balancer pick an instance from these target pool based on a hash of the source IP and port and the destination IP and port.
+* Forwarding rules (TCP and UDP)
+* Up to 50 target pools
+* One health check
+* Instances must be in the same region
 
 <h2>Internal Load Balancing</h2>
 
+This load balancer enables you to run and scale services behind a private load balancing IP address
+* Regional, private load balancing
+  * VM instances in same region, internal IP address
+  * RFC1918 IP addresses
+* TCP/UDP traffic
+* Reduced latency, simpler configuration
+* Software defined, full distributed load balancing
+* Built on top of Andromeda, delivers traffic from the client instance to a back end instance
+* Supports 3 tier web services
 
+<h3>Internal HTTP(S) Load Balancing</h3>
+
+* Regional, private load balancing
+  * VM instances in same region
+  * RFC 1918 IP addresses
+* HTTP, HTTPS or HTTP/2 protocols
+* Based on open source Envoy proxy
 
 <h2>Configure an Internal Network Load Balancer</h2>
 <h3>Intro</h3>
 
-
+* Create HTTP and health check firewall rules
+* Configure 2 instance templates
+* Create 2 managed instance groups
+* Configure and test an internal load balancer
 
 <h3>Review</h3>
 
-
+Created 2 managed instance groups in the US central 1 region, with firewall rules to allow HTTP traffic to those instances and TCP traffic from the GCP health checker. Configured and tested an internal load balancer for the instance groups.
 
 <h2>Choosing a Load Balancer</h2>
 
+<h3>IPv6 support</h3>
 
+* HTTP(S), SSL proxy, TCP proxy load balancers
+* The load balancer acts as a reverse proxy, terminates the IPv6 client connection and places the request into an IPv4 connection to a backend. On the reverse path, the load balancer receives teh IPv4 response from the backend and places it into the IPv6 connection back to the original client. Configuring IPv6 termination makes your backend instances appear as IPv6 applications to the IPv6 clients.
+
+![Deployment modes for Cloud Load Balancing](image-15.png)
+
+* Determine what traffic type you want to handle
+* Application Load Balancer: flexible feature set for your applications with HTTP(S) traffic
+* Proxy Network Load Balancer: implement TLS offload, TCP proxy, or support for external load balancing to backends in multiple regions
+* Passthrough Network Load Balancer: preserve client source IP addresses, avoid overhead of proxies, support additional protocols (UDP, ESP, ICMP, UDP) or expose client IP address to applications
+* Consider applications requirements of external or internal facing, backends global or regional
+
+![Summary of CLoud Load Balancers](image-16.png)
+* MANAGED indicates it is implemented as a managed service either on Google front ends or on the open source Envoy proxy
 
 <h2>Module review</h2>
 
-
+* Different types of load balancers
+* Managed instance groups
+* Autoscaling
+* Criteria in choosing a load balancer
+* Useful to combine an internal and external load balancer to support 3 tier web services
