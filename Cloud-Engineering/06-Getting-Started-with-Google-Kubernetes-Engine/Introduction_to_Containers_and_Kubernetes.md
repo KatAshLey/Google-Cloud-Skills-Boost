@@ -114,9 +114,43 @@ Why containers are appealing to developers?
 
 <h2>Kubernetes</h2>
 
+* Open source platform for managing containerized workloads and services
+* Makes it easy to orchestrate many containers on many hosts, scale them as microservices, and deploy rollouts and rollbacks
+* Is a set of APIs to deploy containers on a set of nodes called a **cluster**
+* Divided into a set of primary components that run as the control plane and a set of nodes that run containers. **Nodes** represents a computing instance
+* You can describe a set of applications and how they should interact with each other and Kubernetes figures how to make that happen
+* Supports declarative configurations
+  * Describe the desired state you want to achieve instead of the commands to get there
+  * Saves work as the system's desired state is always documented, reducing errors
+* Allows imperative configuration
+  * Issue commands to change the system's state
+  * Experienced users use imperative configuration only for quick temporary fixes and as a tool when building a declarative configuration
 
+<h3>Kubernetes Features</h3>
+
+* Supports stateless apps eg Nginx or Apache web servers
+* Supports stateful apps, where user and session data can be stored persistently
+* Supports batch jobs and daemon tasks
+* Autoscale containerized apps based on resource utilization
+* Allows resource request levels and resource limits to improve overall workload performance within a cluster
+* Is extensible through an ecosystem of plugins and addons
+* Is open source and portable so can be deployed anywhere and move freely without vendor lock in
 
 <h2>Google Kubernetes Engine</h2>
+
+* A managed Kubernetes service hosted on Google's Infrastructure
+* Helps deploy, manage and scale Kubernetes environments for containerized applications
+* Fully managed so underlying resources do not need to be provisioned and container optimized operating system is used to run workloads
+* Operating systems are optimized to scale quickly with minimal resource footprint
+* GKE Autopilot manages cluster configuration, designed to manage your cluster configuration like nodes, scaling, security and other preconfigured settings
+* Auto upgrade ensures clusters have the latest stable version of Kubernetes
+* Auto repair repairs unhealthy nodes **Nodes** the virtual machines that host containers in a GKE cluster. Performs periodic health checks on each node of the cluster and nodes determined to be unhealthy are drained and recreated
+* Scales the cluster itself
+* Cloud Build integration, uses private container images securely stored in Artifact Registry to automate deployment
+* Identity and Access Management integration, helps control access by using accounts and role permissions
+* Cloud Observability integration, how an application is performing
+* Virtual Private Clouds integration, providing a network infrastructure including load balancers and ingress access for your cluster
+* Google Cloud Console provides insights into GKE clusters and their resources, to view, inspect and delete resources in the clusters
 
 
 
