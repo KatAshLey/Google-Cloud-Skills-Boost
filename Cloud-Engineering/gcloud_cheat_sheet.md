@@ -29,6 +29,30 @@
 
 
 
+<h2>Serverless and App Engine</h2>
+
+
+
+<h2>Storage</h2>
+
+* `gcloud storage buckets create gs://NAME` creates storage bucket with globally unique name. NOTE bucket naming conventions
+
+* `gcloud storage cp -r gs://BUCKET_NAME/FILE_NAME` download file from storage bucket
+
+* `gcloud storage cp FILE_NAME gs://BUCKET_NAME` copies a downloaded file into a storage bucket
+
+* `gcloud storage cp FILE_NAME gs://BUCKET_NAME/FILE_NAME gs://BUCKET_NAME/FOLDER_NAME/FILE_NAME` creates folder, copies file into that folder
+
+* `gcloud storage ls gs://BUCKET_NAME` lists bucket contents
+    * `-l gs://BUCKET_NAME/FILE_NAME` gives details of file
+
+* `gcloud storage rm gs://BUCKET_NAME/FILE_NAME` deletes the file in the bucket
+
+* `gsutil acl ch -d AllUsers:R gs://BUCKET_NAME/FILE_NAME` removes all users read permissions to the file specified
+
+* `gsutil acl ch -u AllUsers:R gs://BUCKET_NAME/FILE_NAME` grants all users read permissions to the file specified
+
+
 <h2>Virtual Machines and Compute Engine</h2>
 
 * `gcloud compute addresses create NAME` reserves IP addresses
@@ -142,10 +166,6 @@
 
 * `gcloud compute url-maps create NAME` creates a URL map
     * `--default-service=DEFAULT_SERVICE` backend service that will be used for requests
-
-<h2>Serverless and App Engine</h2>
-
-
 
 <h2>Miscellaneous</h2>
 
