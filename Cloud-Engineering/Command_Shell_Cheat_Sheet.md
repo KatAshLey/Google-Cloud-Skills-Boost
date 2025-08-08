@@ -1,5 +1,7 @@
 <h1>Command Shell Cheat Sheet</h1>
 
+* `curl -sSO https://dl.google.com/cloudagents/add-google-cloud-ops-agent-repo.sh` and `sudo bash add-google-cloud-ops-agent-repo.sh --also-install` to install Cloud Monitoring agent
+
 * `curl http://IPADDRESS` using external IP addresses to verify an instance is running
 
 * `curl IMAGE_LOCATION --output IMAGE_NAME` downloads an image from the internet
@@ -10,6 +12,10 @@
 
 * `IPADDRESS=$(gcloud compute forwarding-rules describe www-rule --region Region --format="json" | jq -r .IPAddress)` access the external IP address and stores it in a variable
 
+* `mkdir FILE_NAME && cd $_` create a directory
+
+* `npm install` install package dependencies
+
 * `python3 -m venv venv` builds the virtual environment 
 
 * `rm FILE_NAME` deletes a downloaded file
@@ -17,6 +23,10 @@
 * `source venv/bin/activate` activates the virtual environment
 
 * `sudo apt-get install -y virtualenv` installs the virtualenv environment
+
+* `sudo apt-get update` and `sudo apt-get install apache2 php7.0` sets up Apache2 HTTP server
+
+* `sudo service apache2 restart`
 
 * `touch ~/NAME.sh` creates a file with the name and file type specified
 
